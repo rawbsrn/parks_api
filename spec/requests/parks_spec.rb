@@ -20,6 +20,17 @@ RSpec.describe 'parks', type: :request do
 
     post('create park') do
       response(200, 'successful') do
+        consumes 'application/json'
+        parameter name: :park, in: :body, schema: {
+          properties: {
+            name: { type: :string },
+            nearest_town: { type: :string },
+            state: { type: :string },
+            area: { type: :integer },
+            designated: { type: :string }
+          },
+          required: %w[name nearest_town state area designated]
+        }
 
         after do |example|
           example.metadata[:response][:content] = {
@@ -55,6 +66,16 @@ RSpec.describe 'parks', type: :request do
     patch('update park') do
       response(200, 'successful') do
         let(:id) { '123' }
+        consumes 'application/json'
+        parameter name: :park, in: :body, schema: {
+          properties: {
+            name: { type: :string },
+            nearest_town: { type: :string },
+            state: { type: :string },
+            area: { type: :integer },
+            designated: { type: :string }
+          },
+        }
 
         after do |example|
           example.metadata[:response][:content] = {
@@ -70,6 +91,16 @@ RSpec.describe 'parks', type: :request do
     put('update park') do
       response(200, 'successful') do
         let(:id) { '123' }
+        consumes 'application/json'
+        parameter name: :park, in: :body, schema: {
+          properties: {
+            name: { type: :string },
+            nearest_town: { type: :string },
+            state: { type: :string },
+            area: { type: :integer },
+            designated: { type: :string }
+          },
+        }
 
         after do |example|
           example.metadata[:response][:content] = {
