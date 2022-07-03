@@ -27,10 +27,11 @@ RSpec.describe 'parks', type: :request do
             nearest_town: { type: :string },
             state: { type: :string },
             area: { type: :integer },
-            designated: { type: :integer }
+            designated: { type: :string }
           },
           required: %w[name nearest_town state area designated]
         }
+
         after do |example|
           example.metadata[:response][:content] = {
             'application/json' => {
@@ -72,10 +73,10 @@ RSpec.describe 'parks', type: :request do
             nearest_town: { type: :string },
             state: { type: :string },
             area: { type: :integer },
-            designated: { type: :integer }
+            designated: { type: :string }
           },
-          required: %w[name nearest_town state area designated]
         }
+
         after do |example|
           example.metadata[:response][:content] = {
             'application/json' => {
@@ -97,10 +98,10 @@ RSpec.describe 'parks', type: :request do
             nearest_town: { type: :string },
             state: { type: :string },
             area: { type: :integer },
-            designated: { type: :integer }
+            designated: { type: :string }
           },
-          required: %w[name nearest_town state area designated]
         }
+
         after do |example|
           example.metadata[:response][:content] = {
             'application/json' => {

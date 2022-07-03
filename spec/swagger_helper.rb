@@ -23,16 +23,15 @@ RSpec.configure do |config|
       },
       paths: {},
       servers: [
-   {
-     url: 'http://{defaultHost}',
-     variables: {
+        {
+      url: 'http://{defaultHost}',
+      variables: {
       defaultHost: {
-       default: 'localhost:3000/'
-     }
+        default: 'localhost:3000/'
+      }
     }
-   }
+    }
 ]
-
     }
   }
 
@@ -40,5 +39,5 @@ RSpec.configure do |config|
   # The swagger_docs configuration option has the filename including format in
   # the key, this may want to be changed to avoid putting yaml in json files.
   # Defaults to json. Accepts ':json' and ':yaml'.
-  config.swagger_format = :yaml
+  config.swagger_format = :json
 end
