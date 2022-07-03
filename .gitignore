@@ -21,3 +21,6 @@
 
 # Ignore master key for decrypting credentials and more.
 /config/master.key
+
+#Auto generated Swagger docs to be modified and placed into README
+/swagger_docs/*
